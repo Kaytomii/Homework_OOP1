@@ -39,7 +39,7 @@ void Fraction::setDenominator(double denominator1)
 
 void Fraction::fill_Fraction()
 {
-	std::cout << "Enter numarator: ";
+	std::cout << "Enter numerator: ";
 	std::cin >> numerator;
 	setNumarator(numerator);
 
@@ -50,8 +50,6 @@ void Fraction::fill_Fraction()
 
 void Fraction::user_choice()
 {
-	size_t choice;
-
 	std::cout << "What mathematical operation would you like to perform?\n";
 	std::cout << "-------------------------------------------------------\n";
 	std::cout << "1.Add fraction\n";
@@ -59,35 +57,25 @@ void Fraction::user_choice()
 	std::cout << "3.Multiply fraction\n";
 	std::cout << "4.Divide fraction\n";
 	std::cout << "-------------------------------------------------------\n";
-	std::cout << "Enter your chice (1 - 4): ";
-	std::cin >> choice;
-
-	switch (choice)
-	{
-	case 1: add_Fraction(); break;
-	case 2: minus_Fraction(); break;
-	case 3: multiply_Fraction(); break;
-	case 4: divide_Fraction(); break;
-	default: std::cout << "Error input";
-	}
+	std::cout << "Enter your choice (1 - 4): ";
 }
 
-void Fraction::add_Fraction()
+double Fraction::add_Fraction(Fraction& obj)
 {
-	std::cout << "Fraction = " << numerator + denominator << std::endl;
+	return numerator + denominator + obj.numerator + obj.denominator;
 }
 
-void Fraction::minus_Fraction()
+double Fraction::minus_Fraction(Fraction& obj)
 {
-	std::cout << "Fraction = " << numerator - denominator << std::endl;
+	return numerator - denominator + obj.numerator - obj.denominator;
 }
 
-void Fraction::multiply_Fraction()
+double Fraction::multiply_Fraction(Fraction& obj)
 {
-	std::cout << "Fraction = " << numerator * denominator << std::endl;
+	return numerator * denominator + obj.numerator * obj.denominator;
 }
 
-void Fraction::divide_Fraction()
+double Fraction::divide_Fraction(Fraction& obj)
 {
-	std::cout << "Fraction = " << numerator / denominator << std::endl;
+	return numerator / denominator + obj.numerator / obj.denominator;
 }

@@ -21,9 +21,9 @@ public:
 	//methods(functions)
 	void fill_Fraction();
 	void user_choice();
-	void add_Fraction();
-	void minus_Fraction();
-	void multiply_Fraction();
-	void divide_Fraction();
+	double add_Fraction(Fraction& obj);
+	double minus_Fraction(Fraction& obj);
+	double multiply_Fraction(Fraction& obj);
+	double divide_Fraction(Fraction& obj);
 };
 
